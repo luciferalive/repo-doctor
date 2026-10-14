@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repo-doctor"
+version = "0.1.0"
+description = "Check how healthy and contributor-friendly a git repo is, with one command."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+repo-doctor = "repo_doctor.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["repo_doctor*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
