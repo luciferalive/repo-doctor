@@ -20,6 +20,7 @@ def test_good_repo_scores_high(tmp_path):
     (tmp_path / "README.md").write_text("x" * 300)
     (tmp_path / "LICENSE").write_text("MIT")
     (tmp_path / ".gitignore").write_text("*.pyc")
+    (tmp_path / ".editorconfig").write_text("root = true\n")
     (tmp_path / "CONTRIBUTING.md").write_text("hi")
     (tmp_path / "CODE_OF_CONDUCT.md").write_text("be nice")
     (tmp_path / "SECURITY.md").write_text("email us")
@@ -37,6 +38,17 @@ def test_good_repo_scores_high(tmp_path):
 def test_short_readme_warns(tmp_path):
     (tmp_path / "README.md").write_text("# hi")
     assert by_id(run_checks(tmp_path))["readme"].status == "warn"
+
+
+def test_editorconfig_warns_when_missing(tmp_path):
+    res = by_id(run_checks(tmp_path, only=["editorconfig"]))
+    assert res["editorconfig"].status == "warn"
+
+
+def test_editorconfig_passes_when_present(tmp_path):
+    (tmp_path / ".editorconfig").write_text("root = true\n")
+    res = by_id(run_checks(tmp_path, only=["editorconfig"]))
+    assert res["editorconfig"].status == PASS
 
 
 def test_only_and_skip(tmp_path):

@@ -43,6 +43,7 @@ repo-doctor --list             # show all checks
 | `readme` | README exists and isn't a stub |
 | `license` | A LICENSE file |
 | `gitignore` | A .gitignore |
+| `editorconfig` | A .editorconfig |
 | `contributing` | A CONTRIBUTING guide |
 | `code-of-conduct` | A CODE_OF_CONDUCT.md |
 | `ci` | CI config (GitHub Actions, GitLab CI, etc.) |
