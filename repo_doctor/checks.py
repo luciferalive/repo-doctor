@@ -46,6 +46,13 @@ def gitignore(root: Path):
     return WARN, "No .gitignore.", "Add one so build artifacts and secrets don't get committed."
 
 
+@check("editorconfig", ".editorconfig present")
+def editorconfig(root: Path):
+    if (root / ".editorconfig").is_file():
+        return PASS, ".editorconfig found."
+    return WARN, "No .editorconfig.", "Add one so indentation and whitespace stay consistent across editors."
+
+
 @check("contributing", "CONTRIBUTING guide")
 def contributing(root: Path):
     for base in (root, root / ".github", root / "docs"):

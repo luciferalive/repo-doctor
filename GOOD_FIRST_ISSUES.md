@@ -5,7 +5,7 @@ Copy any of these into GitHub Issues with the labels `good first issue` and
 
 ## New checks (each is ~10 lines + a test)
 - [ ] `changelog`: warn if no CHANGELOG.md / CHANGES.md
-- [ ] `editorconfig`: warn if no .editorconfig
+- [x] `editorconfig`: warn if no .editorconfig
 - [ ] `readme-sections`: warn if README lacks an install/usage heading
 - [ ] `dependabot`: warn if no `.github/dependabot.yml`
 - [ ] `codeowners`: warn if no CODEOWNERS file
