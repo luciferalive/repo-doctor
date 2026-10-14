@@ -5,7 +5,7 @@ Thanks for wanting to help! Every contribution counts, including typo fixes.
 ## Quick start
 
 ```bash
-git clone https://github.com/<your-username>/repo-doctor.git
+git clone https://github.com/luciferalive/repo-doctor.git
 cd repo-doctor
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"

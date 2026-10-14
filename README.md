@@ -21,7 +21,7 @@ Health score: 62/100
 ## Install
 
 ```bash
-pip install git+https://github.com/<your-username>/repo-doctor.git
+pip install git+https://github.com/luciferalive/repo-doctor.git
 ```
 
 ## Usage
@@ -53,7 +53,7 @@ repo-doctor --list             # show all checks
 ## Use it in CI
 
 ```yaml
-- run: pip install git+https://github.com/<your-username>/repo-doctor.git
+- run: pip install git+https://github.com/luciferalive/repo-doctor.git
 - run: repo-doctor . --min-score 80
 ```
 
